@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { randomItem } from '../utils/randomItem';
+import { randomItem } from '../utils/random-item';
 import { DEFAULT_LOREM, LOREM_FIRST } from '../utils/constants';
-import { randomRange } from '../utils/randomRange';
+import { randomRange } from '../utils/random-range';
 import { capitalize } from '../utils/capitalize';
 
 @Injectable()

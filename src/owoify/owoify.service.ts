@@ -8,7 +8,7 @@ import {
   FACE_LIST,
   OWOIFY_MAP,
 } from '../utils/constants';
-import { randomItem } from '../utils/randomItem';
+import { randomItem } from '../utils/random-item';
 
 @Injectable()
 export class OwoifyService {
