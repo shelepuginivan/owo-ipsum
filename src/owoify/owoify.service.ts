@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { OwoifyOptions } from '../utils/types/OwoifyOptions';
+import { OwoifyProbabilities } from '../utils/types/OwoifyProbabilities';
 import {
-  DEFAULT_ACTION_LIST,
+  ACTION_LIST,
   DEFAULT_ACTION_PROBABILITY,
-  DEFAULT_FACE_LIST,
   DEFAULT_FACE_PROBABILITY,
-  DEFAULT_OWOIFY_MAP,
   DEFAULT_STUTTER_PROBABILITY,
+  FACE_LIST,
+  OWOIFY_MAP,
 } from '../utils/constants';
 import { randomItem } from '../utils/randomItem';
 
@@ -21,12 +21,7 @@ export class OwoifyService {
     return word;
   }
 
-  owoifyText(text: string, options: OwoifyOptions): string {
-    const actionList = options?.actionList || DEFAULT_ACTION_LIST;
-    const faceList = options?.faceList || DEFAULT_FACE_LIST;
-    const owoifyMap = options?.owoifyMap || DEFAULT_OWOIFY_MAP;
-    const probabilities = options?.probabilities;
-
+  owoifyText(text: string, probabilities: OwoifyProbabilities): string {
     const faceProbability = probabilities?.face || DEFAULT_FACE_PROBABILITY;
     const stutterProbability =
       probabilities?.stutter || DEFAULT_STUTTER_PROBABILITY;
@@ -36,14 +31,14 @@ export class OwoifyService {
     let owoifiedText = '';
 
     text.split(' ').forEach((word) => {
-      word = this.owoifyWord(word, owoifyMap);
+      word = this.owoifyWord(word, OWOIFY_MAP);
 
       if (Math.random() < actionProbability) {
-        owoifiedText += `${randomItem<string>(actionList)} `;
+        owoifiedText += `${randomItem<string>(ACTION_LIST)} `;
       }
 
       if (Math.random() < faceProbability) {
-        owoifiedText += `${randomItem<string>(faceList)} `;
+        owoifiedText += `${randomItem<string>(FACE_LIST)} `;
       }
 
       if (Math.random() < stutterProbability) {
@@ -58,16 +53,18 @@ export class OwoifyService {
     return owoifiedText;
   }
 
-  owoifyWords(words: string[], options: OwoifyOptions): string[] {
-    const owoifyMap = options?.owoifyMap || DEFAULT_OWOIFY_MAP;
-    return words.map((word) => this.owoifyWord(word, owoifyMap));
+  owoifyWords(words: string[]): string[] {
+    return words.map((word) => this.owoifyWord(word, OWOIFY_MAP));
   }
 
-  owoifySentences(sentences: string[], options: OwoifyOptions): string[] {
+  owoifySentences(sentences: string[], options: OwoifyProbabilities): string[] {
     return sentences.map((sentence) => this.owoifyText(sentence, options));
   }
 
-  owoifyParagraphs(sentences: string[], options: OwoifyOptions): string[] {
+  owoifyParagraphs(
+    sentences: string[],
+    options: OwoifyProbabilities,
+  ): string[] {
     return sentences.map((paragraph) => this.owoifyText(paragraph, options));
   }
 }
