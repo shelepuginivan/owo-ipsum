@@ -2,7 +2,7 @@ export const DEFAULT_ACTION_PROBABILITY = 0.05;
 export const DEFAULT_FACE_PROBABILITY = 0.05;
 export const DEFAULT_STUTTER_PROBABILITY = 0.1;
 
-export const DEFAULT_OWOIFY_MAP = {
+export const OWOIFY_MAP = {
   l: 'w',
   r: 'w',
   L: 'W',
@@ -18,9 +18,9 @@ export const DEFAULT_OWOIFY_MAP = {
   nu: 'nyu',
 };
 
-export const DEFAULT_ACTION_LIST = ['*blushes*'];
+export const ACTION_LIST = ['*blushes*'];
 
-export const DEFAULT_FACE_LIST = ['owo', 'OwO'];
+export const FACE_LIST = ['owo', 'OwO'];
 
 export const DEFAULT_LOREM: string[] = [
   'lorem',
