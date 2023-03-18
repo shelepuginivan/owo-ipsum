@@ -19,4 +19,12 @@ export class ApiController {
     const probabilities: OwoifyProbabilities = { action, face, stutter };
     return this.apiService.generateSentences(amount, probabilities);
   }
+
+  @Get('paragraphs')
+  generateParagraphs(
+    @Query() { amount, action, face, stutter }: ApiQueryOptions,
+  ): string[] {
+    const probabilities: OwoifyProbabilities = { action, face, stutter };
+    return this.apiService.generateParagraphs(amount, probabilities);
+  }
 }
