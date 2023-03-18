@@ -57,14 +57,21 @@ export class OwoifyService {
     return words.map((word) => this.owoifyWord(word, OWOIFY_MAP));
   }
 
-  owoifySentences(sentences: string[], options: OwoifyProbabilities): string[] {
-    return sentences.map((sentence) => this.owoifyText(sentence, options));
+  owoifySentences(
+    sentences: string[],
+    probabilities: OwoifyProbabilities,
+  ): string[] {
+    return sentences.map((sentence) =>
+      this.owoifyText(sentence, probabilities),
+    );
   }
 
   owoifyParagraphs(
     sentences: string[],
-    options: OwoifyProbabilities,
+    probabilities: OwoifyProbabilities,
   ): string[] {
-    return sentences.map((paragraph) => this.owoifyText(paragraph, options));
+    return sentences.map((paragraph) =>
+      this.owoifyText(paragraph, probabilities),
+    );
   }
 }
