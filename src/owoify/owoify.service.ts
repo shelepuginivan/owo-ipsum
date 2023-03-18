@@ -1,8 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { OwoifyOptions } from '../utils/types/OwoifyOptions';
 import {
+  DEFAULT_ACTION_LIST,
   DEFAULT_ACTION_PROBABILITY,
+  DEFAULT_FACE_LIST,
   DEFAULT_FACE_PROBABILITY,
+  DEFAULT_OWOIFY_MAP,
   DEFAULT_STUTTER_PROBABILITY,
 } from '../utils/constants';
 import { randomItem } from '../utils/randomItem';
