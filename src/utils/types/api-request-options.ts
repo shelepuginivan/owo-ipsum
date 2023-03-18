@@ -3,5 +3,5 @@ import { ResponseFormat } from './response-format';
 
 export type ApiRequestOptions = OwoifyProbabilities & {
   amount?: number;
-  responseFormat?: ResponseFormat;
+  format?: ResponseFormat;
 };
