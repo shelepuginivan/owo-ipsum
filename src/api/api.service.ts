@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { OwoifyService } from '../owoify/owoify.service';
 import { LoremService } from '../lorem/lorem.service';
-import { OwoifyOptions } from '../utils/types/OwoifyOptions';
+import { OwoifyProbabilities } from '../utils/types/OwoifyProbabilities';
 
 @Injectable()
 export class ApiService {
