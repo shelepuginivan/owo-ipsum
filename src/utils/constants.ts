@@ -72,3 +72,5 @@ export const DEFAULT_LOREM: string[] = [
   'est',
   'laborum',
 ];
+export const LOREM_FIRST =
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
