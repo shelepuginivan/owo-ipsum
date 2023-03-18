@@ -14,10 +14,10 @@ import { parseRange } from '../utils/parse-range';
 
 @Injectable()
 export class LoremService {
-  generateLoremWords(amount: number): string[] {
+  generateLoremWords(numberOfWords: number): string[] {
     const res = [];
 
-    for (let i = 0; i < amount; i++) {
+    for (let i = 0; i < numberOfWords; i++) {
       res.push(randomItem<string>(DEFAULT_LOREM));
     }
 
@@ -25,17 +25,17 @@ export class LoremService {
   }
 
   generateLoremSentences(
-    amount: number,
-    wordsAmountRange?: number | string,
+    numberOfSentence: number,
+    numberOfWordsRange?: number | string,
   ): string[] {
     const res = [];
 
-    let [min, max] = parseRange(wordsAmountRange);
+    let [min, max] = parseRange(numberOfWordsRange);
 
     min ||= DEFAULT_MIN_WORDS;
     max ||= DEFAULT_MAX_WORDS;
 
-    for (let i = 0; i < amount; i++) {
+    for (let i = 0; i < numberOfSentence; i++) {
       const sentence = this.generateLoremWords(randomRange(min, max)).join(' ');
 
       res.push(`${capitalize(sentence)}.`);
@@ -45,33 +45,34 @@ export class LoremService {
   }
 
   generateLoremParagraphs(
-    amount: number,
-    wordsAmountRange?: number | string,
-    sentenceAmountRange?: number | string,
+    numberOfParagraphs: number,
+    numberOfWordsRange?: number | string,
+    numberOfSentencesRange?: number | string,
   ): string[] {
     const paragraphs = [];
 
-    let [minSentenceAmount, maxSentenceAmount] =
-      parseRange(sentenceAmountRange);
+    let [minNumberOfSentences, maxNumberOfSentences] = parseRange(
+      numberOfSentencesRange,
+    );
 
-    minSentenceAmount ||= DEFAULT_MIN_SENTENCES;
-    maxSentenceAmount ||= DEFAULT_MAX_SENTENCES;
+    minNumberOfSentences ||= DEFAULT_MIN_SENTENCES;
+    maxNumberOfSentences ||= DEFAULT_MAX_SENTENCES;
 
     const firstParagraph = [
       LOREM_FIRST,
       ...this.generateLoremSentences(
-        randomRange(minSentenceAmount - 1, maxSentenceAmount - 1),
-        wordsAmountRange,
+        randomRange(minNumberOfSentences - 1, maxNumberOfSentences - 1),
+        numberOfWordsRange,
       ),
     ].join(' ');
 
     paragraphs.push(firstParagraph);
 
-    for (let i = 0; i < amount - 1; i++) {
+    for (let i = 0; i < numberOfParagraphs - 1; i++) {
       paragraphs.push(
         this.generateLoremSentences(
-          randomRange(minSentenceAmount, maxSentenceAmount),
-          wordsAmountRange,
+          randomRange(minNumberOfSentences, maxNumberOfSentences),
+          numberOfWordsRange,
         ).join(' '),
       );
     }

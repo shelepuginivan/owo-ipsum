@@ -13,9 +13,9 @@ export class ApiController {
 
   @Get('words')
   generateWords(
-    @Query() { amount, format }: ApiRequestOptions,
+    @Query() { number, format }: ApiRequestOptions,
   ): string[] | string {
-    const generatedWords = this.apiService.generateWords(amount);
+    const generatedWords = this.apiService.generateWords(number);
 
     return this.responseFormatService.formatResponse(generatedWords, format);
   }
@@ -23,12 +23,12 @@ export class ApiController {
   @Get('sentences')
   generateSentences(
     @Query()
-    { amount, action, face, stutter, format, words }: ApiRequestOptions,
+    { number, action, face, stutter, format, words }: ApiRequestOptions,
   ): string[] | string {
     const probabilities: OwoifyProbabilities = { action, face, stutter };
 
     const generatedSentences = this.apiService.generateSentences(
-      amount,
+      number,
       probabilities,
       words,
     );
@@ -43,7 +43,7 @@ export class ApiController {
   generateParagraphs(
     @Query()
     {
-      amount,
+      number,
       action,
       face,
       stutter,
@@ -55,7 +55,7 @@ export class ApiController {
     const probabilities: OwoifyProbabilities = { action, face, stutter };
 
     const generatedParagraphs = this.apiService.generateParagraphs(
-      amount,
+      number,
       probabilities,
       words,
       sentences,

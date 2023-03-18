@@ -10,33 +10,33 @@ export class ApiService {
     private readonly owoifyService: OwoifyService,
   ) {}
 
-  generateWords(amount: number): string[] {
-    const loremWords = this.loremService.generateLoremWords(amount);
+  generateWords(number: number): string[] {
+    const loremWords = this.loremService.generateLoremWords(number);
     return this.owoifyService.owoifyWords(loremWords);
   }
 
   generateSentences(
-    amount: number,
+    number: number,
     probabilities: OwoifyProbabilities,
-    wordsAmountRange?: number | string,
+    numberOfWordsRange?: number | string,
   ): string[] {
     const loremSentences = this.loremService.generateLoremSentences(
-      amount,
-      wordsAmountRange,
+      number,
+      numberOfWordsRange,
     );
     return this.owoifyService.owoifySentences(loremSentences, probabilities);
   }
 
   generateParagraphs(
-    amount: number,
+    number: number,
     probabilities: OwoifyProbabilities,
-    wordsAmountRange?: number | string,
-    sentencesAmountRange?: number | string,
+    numberOfWordsRange?: number | string,
+    numberOfSentencesRange?: number | string,
   ): string[] {
     const loremParagraphs = this.loremService.generateLoremParagraphs(
-      amount,
-      wordsAmountRange,
-      sentencesAmountRange,
+      number,
+      numberOfWordsRange,
+      numberOfSentencesRange,
     );
     return this.owoifyService.owoifyParagraphs(loremParagraphs, probabilities);
   }
