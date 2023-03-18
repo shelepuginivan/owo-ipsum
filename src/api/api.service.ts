@@ -5,8 +5,11 @@ import {
   DEFAULT_FACE_PROBABILITY,
   DEFAULT_LOREM,
   DEFAULT_STUTTER_PROBABILITY,
+  LOREM_FIRST,
 } from '../utils/constants';
 import { randomItem } from '../utils/randomItem';
+import { randomRange } from '../utils/randomRange';
+import { capitalize } from '../utils/capitalize';
 
 @Injectable()
 export class ApiService {
@@ -14,8 +17,19 @@ export class ApiService {
     const res = [];
 
     for (let i = 0; i < amount; i++) {
-      const randomSentence = randomItem<string>(DEFAULT_LOREM).split('');
-      res.push(randomItem<string>(randomSentence));
+      res.push(randomItem<string>(DEFAULT_LOREM).split(''));
+    }
+
+    return res;
+  }
+
+  generateLoremSentences(amount: number): string[] {
+    const res = [LOREM_FIRST];
+
+    for (let i = 0; i < amount - 1; i++) {
+      const sentence = this.generateLoremWords(randomRange(5, 15)).join(' ');
+
+      res.push(`${capitalize(sentence)}.`);
     }
 
     return res;
