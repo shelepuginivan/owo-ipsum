@@ -1,6 +1,10 @@
 export const DEFAULT_ACTION_PROBABILITY = 0.05;
 export const DEFAULT_FACE_PROBABILITY = 0.05;
 export const DEFAULT_STUTTER_PROBABILITY = 0.1;
+export const DEFAULT_MIN_WORDS = 5;
+export const DEFAULT_MAX_WORDS = 15;
+export const DEFAULT_MIN_SENTENCES = 3;
+export const DEFAULT_MAX_SENTENCES = 8;
 
 export const OWOIFY_MAP = {
   l: 'w',
