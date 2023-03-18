@@ -35,6 +35,23 @@ export class ApiService {
     return res;
   }
 
+  generateLoremParagraphs(amount: number): string[] {
+    const paragraphs = [];
+
+    const firstParagraph = [
+      LOREM_FIRST,
+      ...this.generateLoremSentences(randomRange(3, 7)),
+    ].join(' ');
+
+    paragraphs.push(firstParagraph);
+
+    for (let i = 0; i < amount - 1; i++) {
+      paragraphs.push(this.generateLoremSentences(randomRange(4, 8)));
+    }
+
+    return paragraphs;
+  }
+
   owoifyWord(word: string, owoifyMap: Record<string, string>) {
     Object.keys(owoifyMap).forEach((key) => {
       const keyRegExp = new RegExp(key, 'g');
