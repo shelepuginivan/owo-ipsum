@@ -14,4 +14,12 @@ export class ApiService {
     const loremWords = this.loremService.generateLoremWords(amount);
     return this.owoifyService.owoifyWords(loremWords);
   }
+
+  generateSentences(
+    amount: number,
+    probabilities: OwoifyProbabilities,
+  ): string[] {
+    const loremSentences = this.loremService.generateLoremSentences(amount);
+    return this.owoifyService.owoifySentences(loremSentences, probabilities);
+  }
 }
