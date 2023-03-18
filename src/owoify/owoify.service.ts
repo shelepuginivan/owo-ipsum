@@ -19,11 +19,14 @@ export class OwoifyService {
   }
 
   owoifyText(text: string, options: OwoifyOptions): string {
-    const { actionList, faceList, owoifyMap, probabilities } = options;
+    const actionList = options?.actionList || DEFAULT_ACTION_LIST;
+    const faceList = options?.faceList || DEFAULT_FACE_LIST;
+    const owoifyMap = options?.owoifyMap || DEFAULT_OWOIFY_MAP;
+    const probabilities = options?.probabilities;
 
-    const faceProbability = probabilities.face || DEFAULT_FACE_PROBABILITY;
+    const faceProbability = probabilities?.face || DEFAULT_FACE_PROBABILITY;
     const stutterProbability =
-      probabilities.stutter || DEFAULT_STUTTER_PROBABILITY;
+      probabilities?.stutter || DEFAULT_STUTTER_PROBABILITY;
     const actionProbability =
       probabilities.action || DEFAULT_ACTION_PROBABILITY;
 
