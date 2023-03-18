@@ -28,17 +28,17 @@ export class OwoifyService {
     const actionProbability =
       probabilities?.action || DEFAULT_ACTION_PROBABILITY;
 
-    let owoifiedText = '';
+    const owoifiedText = [];
 
     text.split(' ').forEach((word) => {
       word = this.owoifyWord(word, OWOIFY_MAP);
 
       if (Math.random() < actionProbability) {
-        owoifiedText += `${randomItem<string>(ACTION_LIST)} `;
+        owoifiedText.push(randomItem<string>(ACTION_LIST));
       }
 
       if (Math.random() < faceProbability) {
-        owoifiedText += `${randomItem<string>(FACE_LIST)} `;
+        owoifiedText.push(randomItem<string>(FACE_LIST));
       }
 
       if (Math.random() < stutterProbability) {
@@ -47,10 +47,10 @@ export class OwoifyService {
         word = word.replace(firstLetter, `${firstLetter}-${firstLetter}`);
       }
 
-      owoifiedText += `${word} `;
+      owoifiedText.push(word);
     });
 
-    return owoifiedText;
+    return owoifiedText.join(' ');
   }
 
   owoifyWords(words: string[]): string[] {
