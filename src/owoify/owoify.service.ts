@@ -31,7 +31,7 @@ export class OwoifyService {
     const stutterProbability =
       probabilities?.stutter || DEFAULT_STUTTER_PROBABILITY;
     const actionProbability =
-      probabilities.action || DEFAULT_ACTION_PROBABILITY;
+      probabilities?.action || DEFAULT_ACTION_PROBABILITY;
 
     let owoifiedText = '';
 
