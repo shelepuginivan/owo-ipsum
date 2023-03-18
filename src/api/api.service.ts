@@ -10,8 +10,8 @@ export class ApiService {
     private readonly owoifyService: OwoifyService,
   ) {}
 
-  generateWords(amount: number, options: OwoifyOptions): string[] {
+  generateWords(amount: number): string[] {
     const loremWords = this.loremService.generateLoremWords(amount);
-    return this.owoifyService.owoifyWords(loremWords, options);
+    return this.owoifyService.owoifyWords(loremWords);
   }
 }
