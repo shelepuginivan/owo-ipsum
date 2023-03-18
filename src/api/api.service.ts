@@ -18,16 +18,26 @@ export class ApiService {
   generateSentences(
     amount: number,
     probabilities: OwoifyProbabilities,
+    wordsAmountRange?: number | string,
   ): string[] {
-    const loremSentences = this.loremService.generateLoremSentences(amount);
+    const loremSentences = this.loremService.generateLoremSentences(
+      amount,
+      wordsAmountRange,
+    );
     return this.owoifyService.owoifySentences(loremSentences, probabilities);
   }
 
   generateParagraphs(
     amount: number,
     probabilities: OwoifyProbabilities,
+    wordsAmountRange?: number | string,
+    sentencesAmountRange?: number | string,
   ): string[] {
-    const loremParagraphs = this.loremService.generateLoremParagraphs(amount);
+    const loremParagraphs = this.loremService.generateLoremParagraphs(
+      amount,
+      wordsAmountRange,
+      sentencesAmountRange,
+    );
     return this.owoifyService.owoifyParagraphs(loremParagraphs, probabilities);
   }
 }
