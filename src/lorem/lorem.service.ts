@@ -39,7 +39,7 @@ export class LoremService {
     paragraphs.push(firstParagraph);
 
     for (let i = 0; i < amount - 1; i++) {
-      paragraphs.push(this.generateLoremSentences(randomRange(4, 8)));
+      paragraphs.push(this.generateLoremSentences(randomRange(4, 8)).join(' '));
     }
 
     return paragraphs;
