@@ -10,7 +10,7 @@ export class LoremService {
     const res = [];
 
     for (let i = 0; i < amount; i++) {
-      res.push(randomItem<string>(DEFAULT_LOREM).split(''));
+      res.push(randomItem<string>(DEFAULT_LOREM));
     }
 
     return res;
