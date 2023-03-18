@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { OwoifyProbabilities } from '../utils/types/OwoifyProbabilities';
+import { OwoifyProbabilities } from '../utils/types/owoify-probabilities';
 import {
   ACTION_LIST,
   DEFAULT_ACTION_PROBABILITY,
