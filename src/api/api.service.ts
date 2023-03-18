@@ -24,9 +24,9 @@ export class ApiService {
   }
 
   generateLoremSentences(amount: number): string[] {
-    const res = [LOREM_FIRST];
+    const res = [];
 
-    for (let i = 0; i < amount - 1; i++) {
+    for (let i = 0; i < amount; i++) {
       const sentence = this.generateLoremWords(randomRange(5, 15)).join(' ');
 
       res.push(`${capitalize(sentence)}.`);
