@@ -1,6 +1,7 @@
 import { OwoifyProbabilities } from './owoify-probabilities';
+import { ResponseFormat } from './response-format';
 
 export type ApiRequestOptions = OwoifyProbabilities & {
   amount?: number;
-  responseFormat?: 'plain' | 'json' | 'html';
+  responseFormat?: ResponseFormat;
 };
