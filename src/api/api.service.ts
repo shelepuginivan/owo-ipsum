@@ -3,12 +3,24 @@ import { OwoifyOptions } from '../utils/types/OwoifyOptions';
 import {
   DEFAULT_ACTION_PROBABILITY,
   DEFAULT_FACE_PROBABILITY,
+  DEFAULT_LOREM,
   DEFAULT_STUTTER_PROBABILITY,
 } from '../utils/constants';
 import { randomItem } from '../utils/randomItem';
 
 @Injectable()
 export class ApiService {
+  generateLoremWords(amount: number): string[] {
+    const res = [];
+
+    for (let i = 0; i < amount; i++) {
+      const randomSentence = randomItem<string>(DEFAULT_LOREM).split('');
+      res.push(randomItem<string>(randomSentence));
+    }
+
+    return res;
+  }
+
   owoifyWord(word: string, owoifyMap: Record<string, string>) {
     Object.keys(owoifyMap).forEach((key) => {
       const keyRegExp = new RegExp(key, 'g');
