@@ -18,9 +18,18 @@ export const OWOIFY_MAP = {
   nu: 'nyu',
 };
 
-export const ACTION_LIST = ['*blushes*'];
+export const ACTION_LIST = ['*blushes*', '*giggles*', '*nuzzles*'];
 
-export const FACE_LIST = ['owo', 'OwO'];
+export const FACE_LIST = [
+  'owo',
+  'OwO',
+  'uwu',
+  'UwU',
+  '(*≧▽≦)',
+  '(・`ω´・)',
+  ':3',
+  '>~<',
+];
 
 export const DEFAULT_LOREM: string[] = [
   'lorem',
