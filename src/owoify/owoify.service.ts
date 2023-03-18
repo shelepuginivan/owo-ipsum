@@ -57,4 +57,17 @@ export class OwoifyService {
 
     return owoifiedText;
   }
+
+  owoifyWords(words: string[], options: OwoifyOptions): string[] {
+    const owoifyMap = options?.owoifyMap || DEFAULT_OWOIFY_MAP;
+    return words.map((word) => this.owoifyWord(word, owoifyMap));
+  }
+
+  owoifySentences(sentences: string[], options: OwoifyOptions): string[] {
+    return sentences.map((sentence) => this.owoifyText(sentence, options));
+  }
+
+  owoifyParagraphs(sentences: string[], options: OwoifyOptions): string[] {
+    return sentences.map((paragraph) => this.owoifyText(paragraph, options));
+  }
 }
