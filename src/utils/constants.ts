@@ -2,6 +2,26 @@ export const DEFAULT_ACTION_PROBABILITY = 0.05;
 export const DEFAULT_FACE_PROBABILITY = 0.05;
 export const DEFAULT_STUTTER_PROBABILITY = 0.1;
 
+export const DEFAULT_OWOIFY_MAP = {
+  l: 'w',
+  r: 'w',
+  L: 'W',
+  R: 'W',
+  you: 'uu',
+  You: 'Uu',
+  oo: 'uwu',
+  e: 'we',
+  na: 'nya',
+  ne: 'nye',
+  ni: 'nyi',
+  no: 'nyo',
+  nu: 'nyu',
+};
+
+export const DEFAULT_ACTION_LIST = ['*blushes*'];
+
+export const DEFAULT_FACE_LIST = ['owo', 'OwO'];
+
 export const DEFAULT_LOREM: string[] = [
   'lorem',
   'ipsum',
@@ -72,5 +92,6 @@ export const DEFAULT_LOREM: string[] = [
   'est',
   'laborum',
 ];
+
 export const LOREM_FIRST =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
