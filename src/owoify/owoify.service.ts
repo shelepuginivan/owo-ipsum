@@ -67,10 +67,10 @@ export class OwoifyService {
   }
 
   owoifyParagraphs(
-    sentences: string[],
+    paragraphs: string[],
     probabilities: OwoifyProbabilities,
   ): string[] {
-    return sentences.map((paragraph) =>
+    return paragraphs.map((paragraph) =>
       this.owoifyText(paragraph, probabilities),
     );
   }
