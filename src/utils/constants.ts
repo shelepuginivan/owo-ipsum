@@ -6,6 +6,11 @@ export const DEFAULT_MAX_WORDS = 15;
 export const DEFAULT_MIN_SENTENCES = 3;
 export const DEFAULT_MAX_SENTENCES = 8;
 
+export const WORDS_LIMIT = 15;
+export const SENTENCE_LIMIT = 10;
+export const NUMBER_OF_ITEMS_LIMIT = 100;
+export const COMMON_LOWER_LIMIT = 0;
+
 export const OWOIFY_MAP = {
   l: 'w',
   r: 'w',
