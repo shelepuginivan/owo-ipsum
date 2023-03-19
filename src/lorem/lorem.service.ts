@@ -7,15 +7,26 @@ import {
   DEFAULT_MIN_SENTENCES,
   DEFAULT_MIN_WORDS,
   LOREM_FIRST,
+  NUMBER_OF_ITEMS_LIMIT,
+  COMMON_LOWER_LIMIT,
+  WORDS_LIMIT,
+  SENTENCE_LIMIT,
 } from '../utils/constants';
 import { randomRange } from '../utils/random-range';
 import { capitalize } from '../utils/capitalize';
 import { parseRange } from '../utils/parse-range';
+import { limitNumber } from '../utils/limit-number';
 
 @Injectable()
 export class LoremService {
   generateLoremWords(numberOfWords: number): string[] {
     const res = [];
+
+    numberOfWords = limitNumber(
+      numberOfWords,
+      NUMBER_OF_ITEMS_LIMIT,
+      COMMON_LOWER_LIMIT,
+    );
 
     for (let i = 0; i < numberOfWords; i++) {
       res.push(randomItem<string>(DEFAULT_LOREM));
@@ -30,7 +41,15 @@ export class LoremService {
   ): string[] {
     const res = [];
 
-    let [min, max] = parseRange(numberOfWordsRange);
+    numberOfSentence = limitNumber(
+      numberOfSentence,
+      NUMBER_OF_ITEMS_LIMIT,
+      COMMON_LOWER_LIMIT,
+    );
+
+    let [min, max] = parseRange(numberOfWordsRange).map((num) =>
+      limitNumber(num, WORDS_LIMIT, COMMON_LOWER_LIMIT),
+    );
 
     min ||= DEFAULT_MIN_WORDS;
     max ||= DEFAULT_MAX_WORDS;
@@ -51,9 +70,15 @@ export class LoremService {
   ): string[] {
     const paragraphs = [];
 
+    numberOfParagraphs = limitNumber(
+      numberOfParagraphs,
+      NUMBER_OF_ITEMS_LIMIT,
+      COMMON_LOWER_LIMIT,
+    );
+
     let [minNumberOfSentences, maxNumberOfSentences] = parseRange(
       numberOfSentencesRange,
-    );
+    ).map((num) => limitNumber(num, SENTENCE_LIMIT, COMMON_LOWER_LIMIT));
 
     minNumberOfSentences ||= DEFAULT_MIN_SENTENCES;
     maxNumberOfSentences ||= DEFAULT_MAX_SENTENCES;
