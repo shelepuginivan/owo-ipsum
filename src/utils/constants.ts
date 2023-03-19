@@ -40,7 +40,7 @@ export const FACE_LIST = [
   '>~<',
 ];
 
-export const DEFAULT_LOREM: string[] = [
+export const LOREM: string[] = [
   'lorem',
   'ipsum',
   'dolor',

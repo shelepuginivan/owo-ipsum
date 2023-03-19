@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { randomItem } from '../utils/random-item';
 import {
-  DEFAULT_LOREM,
+  LOREM,
   DEFAULT_MAX_SENTENCES,
   DEFAULT_MAX_WORDS,
   DEFAULT_MIN_SENTENCES,
@@ -29,7 +29,7 @@ export class LoremService {
     );
 
     for (let i = 0; i < numberOfWords; i++) {
-      res.push(randomItem<string>(DEFAULT_LOREM));
+      res.push(randomItem<string>(LOREM));
     }
 
     return res;
