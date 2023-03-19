@@ -39,7 +39,7 @@ export class LoremService {
     numberOfSentence: number,
     numberOfWordsRange?: number | string,
   ): string[] {
-    const res = [];
+    const sentences = [];
 
     numberOfSentence = limitNumber(
       numberOfSentence,
@@ -57,10 +57,10 @@ export class LoremService {
     for (let i = 0; i < numberOfSentence; i++) {
       const sentence = this.generateLoremWords(randomRange(min, max)).join(' ');
 
-      res.push(`${capitalize(sentence)}.`);
+      sentences.push(`${capitalize(sentence)}.`);
     }
 
-    return res;
+    return sentences;
   }
 
   generateLoremParagraphs(
