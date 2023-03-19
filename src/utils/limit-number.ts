@@ -1,9 +1,9 @@
 /*
  * Limits a number by upper and lower limits
  * @param {number} num - number to limit
- * {number} upperLimit - upper limit
- * {number} lowerLimit - lower limit
- * @return {number} Limited number.
+ * @param {number} upperLimit - upper limit
+ * @param {number} lowerLimit - lower limit
+ * @return {number} Limited number
  * */
 export const limitNumber = (
   num: number,
