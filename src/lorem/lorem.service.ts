@@ -20,7 +20,7 @@ import { limitNumber } from '../utils/limit-number';
 @Injectable()
 export class LoremService {
   generateLoremWords(numberOfWords: number): string[] {
-    const res = [];
+    const words = [];
 
     numberOfWords = limitNumber(
       numberOfWords,
@@ -29,10 +29,10 @@ export class LoremService {
     );
 
     for (let i = 0; i < numberOfWords; i++) {
-      res.push(randomItem<string>(LOREM));
+      words.push(randomItem<string>(LOREM));
     }
 
-    return res;
+    return words;
   }
 
   generateLoremSentences(
