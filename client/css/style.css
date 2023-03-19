@@ -1,0 +1,161 @@
+:root {
+    --lightgray: #999;
+    --gray: #777;
+    --link-blue: #58a6ff;
+    --white: #f2f3f4;
+    --padding: 15px 20% 15px 20%;
+    --transition: all ease-in .2s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--lightgray);
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--gray);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: var(--padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    color: black;
+    text-decoration: none;
+}
+
+header img {
+    width: 50px;
+    height: auto;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-links * {
+    font-size: 1.2em;
+    margin-inline: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+main {
+    padding: var(--padding);
+    background-color: var(--white);
+    flex-grow: 1;
+    min-height: 90vh;
+}
+
+footer {
+    padding: var(--padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer nav {
+    display: flex;
+    flex-direction: column;
+}
+
+footer a {
+    color: var(--link-blue);
+    text-decoration: none;
+    margin-block: 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding-block: 10px;
+}
+
+#generator-form {
+    display: flex;
+    flex-direction: column;
+}
+
+button[type=submit] {
+    transition: var(--transition);
+    cursor: pointer;
+    padding: 5px 15px 5px 15px;
+    border: 2px solid darkgreen;
+    color: darkgreen;
+    margin-top: 10px;
+    font-size: 1em;
+    width: fit-content;
+    align-self: center;
+}
+
+button[type=submit]:hover {
+    color: var(--white);
+    background-color: darkgreen;
+}
+
+.input-wrapper {
+    padding: 10px;
+    display: flex;
+    border-bottom: 1px solid var(--lightgray);
+    margin-bottom: 10px;
+}
+
+.input-wrapper,
+.input-wrapper * {
+    transition: var(--transition);
+}
+
+.input-wrapper label {
+    min-width: 30%;
+    color: var(--lightgray);
+}
+
+.input-wrapper input {
+    flex-grow: 1;
+    background-color: transparent;
+}
+
+.input-wrapper:focus-within {
+    border-color: darkgreen;
+}
+
+.input-wrapper:focus-within label {
+    color: darkgreen;
+    padding-left: 8px;
+}
+
+blockquote p {
+    margin-block: 10px;
+}
