@@ -74,8 +74,8 @@ Generates and returns sentences.
 |  number   | Number of generated words              |          integer           |       0       |        [0, 100]         |
 |   words   | Sentence length - how many words in it | integer or [range](#range) | Random(5, 10) |    [1, 15] or range     |
 |  stutter  | Probability of stutter appearance      |           float            |      0.1      |         [0, 1]          |
-|   face    | Probability of face appearance         |           float            |      0.1      |         [0, 1]          |
-|  action   | Probability of action appearance       |           float            |      0.1      |         [0, 1]          |
+|   face    | Probability of face appearance         |           float            |     0.05      |         [0, 1]          |
+|  action   | Probability of action appearance       |           float            |     0.05      |         [0, 1]          |
 |  format   | Response format                        |           string           |    "json"     | "json", "html", "plain" |
 
 #### Range
@@ -164,8 +164,8 @@ Generates and returns paragraphs.
 |   words   | Sentence length - how many words in it            | integer or [range](#range) | Random(5, 10) |    [1, 15] or range     |
 | sentences | Paragraph length - how many sentences it contains | integer or [range](#range) | Random(3, 8)  |    [1, 10] or range     |
 |  stutter  | Probability of stutter appearance                 |           float            |      0.1      |         [0, 1]          |
-|   face    | Probability of face appearance                    |           float            |      0.1      |         [0, 1]          |
-|  action   | Probability of action appearance                  |           float            |      0.1      |         [0, 1]          |
+|   face    | Probability of face appearance                    |           float            |     0.05      |         [0, 1]          |
+|  action   | Probability of action appearance                  |           float            |     0.05      |         [0, 1]          |
 |  format   | Response format                                   |           string           |    "json"     | "json", "html", "plain" |
 
 #### Example 1
