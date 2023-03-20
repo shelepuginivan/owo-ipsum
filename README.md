@@ -158,15 +158,17 @@ Generates and returns paragraphs.
 
 #### Query
 
-| Parameter | Effect                                            |            Type            |    Default    |     Possible values     |
-|:---------:|---------------------------------------------------|:--------------------------:|:-------------:|:-----------------------:|
-|  number   | Number of generated words                         |          integer           |       0       |        [0, 100]         |
-|   words   | Sentence length - how many words in it            | integer or [range](#range) | Random(5, 10) |    [1, 15] or range     |
-| sentences | Paragraph length - how many sentences it contains | integer or [range](#range) | Random(3, 8)  |    [1, 10] or range     |
-|  stutter  | Probability of stutter appearance                 |           float            |      0.1      |         [0, 1]          |
-|   face    | Probability of face appearance                    |           float            |     0.05      |         [0, 1]          |
-|  action   | Probability of action appearance                  |           float            |     0.05      |         [0, 1]          |
-|  format   | Response format                                   |           string           |    "json"     | "json", "html", "plain" |
+| Parameter | Effect                                                            |            Type            |    Default    |     Possible values     |
+|:---------:|-------------------------------------------------------------------|:--------------------------:|:-------------:|:-----------------------:|
+|  number   | Number of generated words                                         |          integer           |       0       |        [0, 100]         |
+|   words   | Sentence length - how many words in it                            | integer or [range](#range) | Random(5, 10) |    [1, 15] or range     |
+| sentences | Paragraph length - how many sentences it contains                 | integer or [range](#range) | Random(3, 8)  |    [1, 10] or range     |
+|  stutter  | Probability of stutter appearance                                 |           float            |      0.1      |         [0, 1]          |
+|   face    | Probability of face appearance                                    |           float            |     0.05      |         [0, 1]          |
+|  action   | Probability of action appearance                                  |           float            |     0.05      |         [0, 1]          |
+|  format   | Response format                                                   |           string           |    "json"     | "json", "html", "plain" |
+|   lorem   | First sentence of first paragraph is `Lorem Ipsum ...` (owoified) |          boolean           |     false     |       true, false       |
+
 
 #### Example 1
 
@@ -180,19 +182,20 @@ Response
 
 ```json
 [
-  "Wowwem uwu ipsum >~< dowow owo s-sit :3 amwet, (・`ω´・) conswectwetuw adipiscing uwu wewit, >~< swed OwO do weiusmod twempow incididunt :3 ut >~< wabowwe OwO wet (・`ω´・) dowowwe :3 m-magnya awiqua. Pwoidwent OwO vowuptatwe UwU sunt d-dowowwe OwO awiqua uwu ciwwum wenyim. owo Conswequat :3 nyisi :3 in wexwewcitation UwU sint :3 c-ciwwum (*≧▽≦) wowwem OwO a-ad uwu o-owwit. Uwwamco (・`ω´・) wabowwe (*≧▽≦) pawiatuw uwu wwepwwehwendwewit *nuzzles* (・`ω´・) adipiscing. (・`ω´・) Amwet >~< wex (・`ω´・) wea *nuzzles* (・`ω´・) wabowwe awiquip.",
-  ">~< Ut uwu minyim (*≧▽≦) wabowis >~< a-anyim *nuzzles* uwu nyon UwU ut. OwO Ad UwU vowuptatwe UwU p-pwoidwent >~< ad. *blushes* OwO Autwe >~< fugiat wexwewcitation (・`ω´・) in uwu ut w-wowwem uwu dowow uwu vwewit in. In owo wabowis >~< commodo *giggles* >~< cuwpa uwu v-vowuptatwe UwU twempow >~< conswectwetuw ut >~< swed. uwu D-Dowowwe >~< ipsum dowow."
+  "Sint OwO i-iwuwwe :3 ut UwU anyim OwO ciwwum uwu w-wea wenyim *blushes* uwu dowow. Wabowwe uwu cuwpa OwO magnya. :3 Ex owo duis OwO pawiatuw. (・`ω´・) Iwuwwe (・`ω´・) dowowwe owo wewit. Dowowwe uwu duis (*≧▽≦) autwe :3 vwenyiam (・`ω´・) commodo weiusmod owo minyim (・`ω´・) vwenyiam.",
+  "OwO Occawecat ut owo amwet >~< nyuwwa. *giggles* owo Awiqua owo wenyim :3 magnya >~< duis ut UwU dowow twempow (・`ω´・) s-sunt wet. >~< Minyim (・`ω´・) wenyim >~< wowwem >~< cupidatat >~< commodo. Uwwamco (・`ω´・) wewit amwet (・`ω´・) iwuwwe conswequat OwO dowowwe. >~< Quis :3 id (*≧▽≦) id uwu Ut."
 ]
 ```
 
 #### Example 2
 
-In this example, action=1, so action will appear before every word.
+In this example, action=1, so action will appear before every word. Also, lorem=true, so first paragraph
+will start with `Lorem Ipsum dolor sit amet ...`
 
 Request:
 
 ```http request
-GET https://owoipsum.onrender.com/api/paragraphs?number=3&action=1&format=html
+GET https://owoipsum.onrender.com/api/paragraphs?number=3&action=1&format=html&lorem=true
 ```
 
 Response
