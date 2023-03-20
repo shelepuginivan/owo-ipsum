@@ -67,6 +67,7 @@ export class LoremService {
     numberOfParagraphs: number,
     numberOfWordsRange?: number | string,
     numberOfSentencesRange?: number | string,
+    startWithLorem?: boolean,
   ): string[] {
     const paragraphs = [];
 
@@ -83,17 +84,21 @@ export class LoremService {
     minNumberOfSentences ||= DEFAULT_MIN_SENTENCES;
     maxNumberOfSentences ||= DEFAULT_MAX_SENTENCES;
 
-    const firstParagraph = [
-      LOREM_FIRST,
-      ...this.generateLoremSentences(
-        randomRange(minNumberOfSentences - 1, maxNumberOfSentences - 1),
-        numberOfWordsRange,
-      ),
-    ].join(' ');
+    if (startWithLorem) {
+      const firstParagraph = [
+        LOREM_FIRST,
+        ...this.generateLoremSentences(
+          randomRange(minNumberOfSentences - 1, maxNumberOfSentences - 1),
+          numberOfWordsRange,
+        ),
+      ].join(' ');
 
-    paragraphs.push(firstParagraph);
+      paragraphs.push(firstParagraph);
 
-    for (let i = 0; i < numberOfParagraphs - 1; i++) {
+      numberOfParagraphs--;
+    }
+
+    for (let i = 0; i < numberOfParagraphs; i++) {
       paragraphs.push(
         this.generateLoremSentences(
           randomRange(minNumberOfSentences, maxNumberOfSentences),
