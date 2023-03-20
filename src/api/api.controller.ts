@@ -50,6 +50,7 @@ export class ApiController {
       format,
       words,
       sentences,
+      lorem,
     }: ApiRequestOptions,
   ): string[] | string {
     const probabilities: OwoifyProbabilities = { action, face, stutter };
@@ -59,6 +60,7 @@ export class ApiController {
       probabilities,
       words,
       sentences,
+      lorem,
     );
 
     return this.responseFormatService.formatResponse(
