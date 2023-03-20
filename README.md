@@ -63,7 +63,7 @@ sit
 anyim
 ```
 
-### GET /sentences
+### 2. GET /sentences
 
 Generates and returns sentences.
 
@@ -152,7 +152,7 @@ W-Wabowis v-vwenyiam a-awiqua w-west o-occawecat m-minyim a-autwe (・`ω´・) 
 C-Commodo s-sint *blushes* i-in w-wet d-dowow u-ut w-wowwem i-iwuwwe w-wewit.
 ```
 
-### GET /paragraphs
+### 3. GET /paragraphs
 
 Generates and returns paragraphs.
 
