@@ -50,6 +50,14 @@ header {
 header .logo {
     color: black;
     text-decoration: none;
+    display: flex;
+    width: fit-content;
+}
+
+header .logo img {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
 }
 
 header img {
@@ -77,6 +85,43 @@ main {
     min-height: 90vh;
 }
 
+main h1 {
+    margin-block: 20px;
+}
+
+main h2 {
+    margin-block: 15px;
+}
+
+main h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+code,
+kbd {
+    font-family: Consolas, monospace;
+    white-space: pre-line;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+thead * {
+    font-weight: bold;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+    outline: 1px solid var(--lightgray);
+}
+
+td.left {
+    text-align: left;
+}
+
 footer {
     padding: var(--padding);
     display: flex;
@@ -89,6 +134,7 @@ footer nav {
     flex-direction: column;
 }
 
+main a,
 footer a {
     color: var(--link-blue);
     text-decoration: none;
@@ -130,6 +176,7 @@ button[type=submit]:hover {
     display: flex;
     border-bottom: 1px solid var(--lightgray);
     margin-bottom: 10px;
+    max-width: 100%;
 }
 
 .input-wrapper,
@@ -139,6 +186,7 @@ button[type=submit]:hover {
 
 .input-wrapper label {
     min-width: 30%;
+    padding-right: 8px;
     color: var(--lightgray);
 }
 
@@ -154,6 +202,7 @@ button[type=submit]:hover {
 .input-wrapper:focus-within label {
     color: darkgreen;
     padding-left: 8px;
+    padding-right: 0;
 }
 
 blockquote p {
