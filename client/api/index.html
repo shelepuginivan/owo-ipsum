@@ -28,7 +28,88 @@
       </nav>
     </header>
 
-    <main></main>
+    <main>
+      <section>
+        <h1><em>A-API??</em></h1>
+        <blockquote>
+          <p>OwO Ipsum provides an open-source and free API. You even don't need API key!</p>
+          <p>You can use it for any purpose:</p>
+          <ul>
+            <li>Software development</li>
+            <li>Design</li>
+            <li>Having fun</li>
+            <li>Wherever it would be useful</li>
+          </ul>
+        </blockquote>
+      </section>
+      <section>
+        <h1>Documentation</h1>
+        <p>
+          See requests and responses examples on
+          <a
+            target="_blank"
+            href="https://github.com/shelepuginivan/owo-ipsum/blob/main/README.md#api"
+          >GitHub</a>
+          (with syntax highlighting).
+        </p>
+        <br>
+        <p>OwO Ipsum API provides following endpoints.</p>
+
+        <h2><kbd>1. GET /words</kbd></h2>
+        <p>Generates and returns words.</p>
+
+        <h3>Query</h3>
+
+        <table>
+          <thead>
+            <tr> <td>Parameter</td> <td class="left">Effect</td> <td>Type</td> <td>Default</td> <td>Possible values</td> </tr>
+          </thead>
+          <tr> <td>number</td> <td class="left">Number of generated words</td> <td>integer</td> <td>0</td> <td>[0,&nbsp;100]</td> </tr>
+          <tr> <td>format</td> <td class="left">Response format</td> <td>string</td> <td>"json"</td> <td>"json", "html", "plain"</td> </tr>
+        </table>
+
+        <h2><kbd>2. GET /sentences</kbd></h2>
+        <p>Generates and returns sentences.</p>
+
+        <h3>Query</h3>
+        <table>
+          <thead>
+          <tr> <td>Parameter</td> <td class="left">Effect</td> <td>Type</td> <td>Default</td> <td>Possible values</td> </tr>
+          </thead>
+          <tr> <td>number</td> <td class="left">Number of generated words</td> <td>integer</td> <td>0</td> <td>[0,&nbsp;100]</td> </tr>
+          <tr> <td>words</td> <td class="left">Sentence length - how many words in it</td> <td>integer or range</td> <td>Random (5,&nbsp;10)</td> <td>[1,&nbsp;15] or range</td> </tr>
+          <tr> <td>stutter</td> <td class="left">Probability of stutter appearance</td> <td>float</td> <td>0.1</td> <td>[0,&nbsp;1]</td> </tr>
+          <tr> <td>face</td> <td class="left">Probability of face appearance</td> <td>float</td> <td>0.05</td> <td>[0,&nbsp;1]</td> </tr>
+          <tr> <td>action</td> <td class="left">Probability of action appearance</td> <td>float</td> <td>0.05</td> <td>[0,&nbsp;1]</td> </tr>
+          <tr> <td>format</td> <td class="left">Response format</td> <td>string</td> <td>"json"</td> <td>"json", "html", "plain"</td> </tr>
+        </table>
+
+        <h3>Range</h3>
+
+        <p>
+          <strong>Range</strong> - string containing two integers separated by dash. Examples: 3-6, 9-15.
+          In general terms: <kbd>&lt;start&gt;-&lt;end&gt;</kbd>
+          Means that random number from half-closed interval <kbd>[&lt;start&gt;,&nbsp;&lt;end&gt;)</kbd> will be taken.
+        </p>
+
+        <h2><kbd>3. GET /paragraphs</kbd></h2>
+        <p>Generates and returns paragraphs.</p>
+
+        <h3>Query</h3>
+        <table>
+          <thead>
+          <tr> <td>Parameter</td> <td class="left">Effect</td> <td>Type</td> <td>Default</td> <td>Possible values</td> </tr>
+          </thead>
+          <tr> <td>number</td> <td class="left">Number of generated words</td> <td>integer</td> <td>0</td> <td>[0,&nbsp;100]</td> </tr>
+          <tr> <td>words</td> <td class="left">Sentence length - how many words in it</td> <td>integer or range</td> <td>Random (5,&nbsp;10)</td> <td>[1,&nbsp;15] or range</td> </tr>
+          <tr> <td>sentences</td> <td class="left">Paragraph length - how many sentences it contains</td> <td>integer or range</td> <td>Random (5,&nbsp;10)</td> <td>[1,&nbsp;15] or range</td> </tr>
+          <tr> <td>stutter</td> <td class="left">Probability of stutter appearance</td> <td>float</td> <td>0.1</td> <td>[0,&nbsp;1]</td> </tr>
+          <tr> <td>face</td> <td class="left">Probability of face appearance</td> <td>float</td> <td>0.05</td> <td>[0,&nbsp;1]</td> </tr>
+          <tr> <td>action</td> <td class="left">Probability of action appearance</td> <td>float</td> <td>0.05</td> <td>[0,&nbsp;1]</td> </tr>
+          <tr> <td>format</td> <td class="left">Response format</td> <td>string</td> <td>"json"</td> <td>"json", "html", "plain"</td> </tr>
+        </table>
+      </section>
+    </main>
 
     <footer>
       <nav>
