@@ -32,11 +32,13 @@ export class ApiService {
     probabilities: OwoifyProbabilities,
     numberOfWordsRange?: number | string,
     numberOfSentencesRange?: number | string,
+    startWithLorem?: boolean,
   ): string[] {
     const loremParagraphs = this.loremService.generateLoremParagraphs(
       number,
       numberOfWordsRange,
       numberOfSentencesRange,
+      startWithLorem,
     );
     return this.owoifyService.owoifyParagraphs(loremParagraphs, probabilities);
   }
