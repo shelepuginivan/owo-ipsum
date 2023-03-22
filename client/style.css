@@ -171,6 +171,11 @@ button[type=submit]:hover {
     background-color: darkgreen;
 }
 
+input[type=checkbox] {
+    min-width: 20px;
+    min-height: 20px;
+}
+
 .input-wrapper {
     padding: 10px;
     display: flex;
