@@ -60,7 +60,7 @@ export class ApiController {
       probabilities,
       words,
       sentences,
-      lorem,
+      lorem === 'true',
     );
 
     return this.responseFormatService.formatResponse(

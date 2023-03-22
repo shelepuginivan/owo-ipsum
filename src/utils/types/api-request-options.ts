@@ -6,5 +6,5 @@ export type ApiRequestOptions = OwoifyProbabilities & {
   format?: ResponseFormat;
   sentences?: number | string;
   words?: number | string;
-  lorem?: boolean;
+  lorem?: string;
 };
